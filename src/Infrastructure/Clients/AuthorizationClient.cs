@@ -33,8 +33,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<string> AuthorizeUserAsync(UserLoginDto body,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<string> AuthorizeUserAsync(UserLoginDto body, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Add new family
@@ -49,8 +48,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<AddNewFamilyReturnDto> AddNewFamilyAsync(AddNewFamilyDto body,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AddNewFamilyReturnDto> AddNewFamilyAsync(AddNewFamilyDto body, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Delete specified family
@@ -80,8 +78,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task AddUserToFamilyAsync(AddUserToFamilyDto body,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddUserToFamilyAsync(AddUserToFamilyDto body, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Delete user from specified family
@@ -96,8 +93,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task DeleteUserFromFamilyAsync(DeleteUserFromFamilyDto body,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteUserFromFamilyAsync(DeleteUserFromFamilyDto body, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Set a user role to specified family
@@ -112,8 +108,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task SetUserFamilyRoleAsync(SetUserFamilyRoleDto body,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task SetUserFamilyRoleAsync(SetUserFamilyRoleDto body, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Register new user
@@ -128,8 +123,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<UserRegisterReturnDto> RegisterNewUserAsync(UserRegisterDto body,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserRegisterReturnDto> RegisterNewUserAsync(UserRegisterDto body, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Update data of existing user
@@ -144,8 +138,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task UpdateUserDataAsync(UserUpdateDto body,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task UpdateUserDataAsync(UserUpdateDto body, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Update email address of existing user
@@ -160,8 +153,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task UpdateUserEmailAsync(UserUpdateEmailDto body,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task UpdateUserEmailAsync(UserUpdateEmailDto body, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Change password of existing user
@@ -176,8 +168,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task UpdateUserPasswordAsync(UserUpdatePasswordDto body,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task UpdateUserPasswordAsync(UserUpdatePasswordDto body, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Get a user by email address
@@ -192,8 +183,8 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<UserDto> GetUserByEmailAsync(string email,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserDto> GetUserByEmailAsync(string email, System.Threading.CancellationToken cancellationToken);
+
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
@@ -215,19 +206,12 @@ namespace Midas.Services
             return settings;
         }
 
-        protected Newtonsoft.Json.JsonSerializerSettings JsonSerializerSettings
-        {
-            get { return _settings.Value; }
-        }
+        protected Newtonsoft.Json.JsonSerializerSettings JsonSerializerSettings { get { return _settings.Value; } }
 
         partial void UpdateJsonSerializerSettings(Newtonsoft.Json.JsonSerializerSettings settings);
 
-        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request,
-            string url);
-
-        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request,
-            System.Text.StringBuilder urlBuilder);
-
+        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, string url);
+        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, System.Text.StringBuilder urlBuilder);
         partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
 
         /// <summary>
@@ -246,8 +230,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<string> AuthorizeUserAsync(UserLoginDto body,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<string> AuthorizeUserAsync(UserLoginDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/Authorization/Login");
@@ -260,12 +243,10 @@ namespace Midas.Services
                 {
                     var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
                     var content_ = new System.Net.Http.StringContent(json_);
-                    content_.Headers.ContentType =
-                        System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("POST");
-                    request_.Headers.Accept.Add(
-                        System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -274,14 +255,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -293,25 +271,17 @@ namespace Midas.Services
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<string>(response_, headers_, cancellationToken)
-                                    .ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<string>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
                             return objectResponse_.Object;
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -344,8 +314,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<AddNewFamilyReturnDto> AddNewFamilyAsync(AddNewFamilyDto body,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<AddNewFamilyReturnDto> AddNewFamilyAsync(AddNewFamilyDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/Family/Add");
@@ -358,12 +327,10 @@ namespace Midas.Services
                 {
                     var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
                     var content_ = new System.Net.Http.StringContent(json_);
-                    content_.Headers.ContentType =
-                        System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("POST");
-                    request_.Headers.Accept.Add(
-                        System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -372,14 +339,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -391,25 +355,17 @@ namespace Midas.Services
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<AddNewFamilyReturnDto>(response_, headers_,
-                                    cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<AddNewFamilyReturnDto>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
                             return objectResponse_.Object;
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -442,18 +398,14 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task DeleteFamilyAsync(long? id,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task DeleteFamilyAsync(long? id, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/Family/Delete?");
             if (id != null)
             {
-                urlBuilder_.Append(System.Uri.EscapeDataString("id") + "=")
-                    .Append(System.Uri.EscapeDataString(ConvertToString(id,
-                        System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+                urlBuilder_.Append(System.Uri.EscapeDataString("id") + "=").Append(System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             }
-
             urlBuilder_.Length--;
 
             var client_ = _httpClient;
@@ -471,14 +423,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -494,12 +443,8 @@ namespace Midas.Services
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -532,8 +477,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task AddUserToFamilyAsync(AddUserToFamilyDto body,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task AddUserToFamilyAsync(AddUserToFamilyDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/Family/Add/User");
@@ -546,8 +490,7 @@ namespace Midas.Services
                 {
                     var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
                     var content_ = new System.Net.Http.StringContent(json_);
-                    content_.Headers.ContentType =
-                        System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
@@ -558,14 +501,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -581,12 +521,8 @@ namespace Midas.Services
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -619,8 +555,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task DeleteUserFromFamilyAsync(DeleteUserFromFamilyDto body,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task DeleteUserFromFamilyAsync(DeleteUserFromFamilyDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/Family/Delete/User");
@@ -633,8 +568,7 @@ namespace Midas.Services
                 {
                     var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
                     var content_ = new System.Net.Http.StringContent(json_);
-                    content_.Headers.ContentType =
-                        System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("DELETE");
 
@@ -645,14 +579,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -668,12 +599,8 @@ namespace Midas.Services
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -706,8 +633,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task SetUserFamilyRoleAsync(SetUserFamilyRoleDto body,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task SetUserFamilyRoleAsync(SetUserFamilyRoleDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/Family/Set/UserRole");
@@ -720,8 +646,7 @@ namespace Midas.Services
                 {
                     var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
                     var content_ = new System.Net.Http.StringContent(json_);
-                    content_.Headers.ContentType =
-                        System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("PATCH");
 
@@ -732,14 +657,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -755,12 +677,8 @@ namespace Midas.Services
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -793,8 +711,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<UserRegisterReturnDto> RegisterNewUserAsync(
-            UserRegisterDto body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<UserRegisterReturnDto> RegisterNewUserAsync(UserRegisterDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/User/Register");
@@ -807,12 +724,10 @@ namespace Midas.Services
                 {
                     var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
                     var content_ = new System.Net.Http.StringContent(json_);
-                    content_.Headers.ContentType =
-                        System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("POST");
-                    request_.Headers.Accept.Add(
-                        System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -821,14 +736,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -840,25 +752,17 @@ namespace Midas.Services
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<UserRegisterReturnDto>(response_, headers_,
-                                    cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<UserRegisterReturnDto>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
                             return objectResponse_.Object;
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -891,8 +795,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task UpdateUserDataAsync(UserUpdateDto body,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task UpdateUserDataAsync(UserUpdateDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/User/Update/Data");
@@ -905,8 +808,7 @@ namespace Midas.Services
                 {
                     var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
                     var content_ = new System.Net.Http.StringContent(json_);
-                    content_.Headers.ContentType =
-                        System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("PATCH");
 
@@ -917,14 +819,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -940,12 +839,8 @@ namespace Midas.Services
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -978,8 +873,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task UpdateUserEmailAsync(UserUpdateEmailDto body,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task UpdateUserEmailAsync(UserUpdateEmailDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/User/Update/Email");
@@ -992,8 +886,7 @@ namespace Midas.Services
                 {
                     var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
                     var content_ = new System.Net.Http.StringContent(json_);
-                    content_.Headers.ContentType =
-                        System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("PATCH");
 
@@ -1004,14 +897,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -1027,12 +917,8 @@ namespace Midas.Services
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1065,8 +951,7 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task UpdateUserPasswordAsync(UserUpdatePasswordDto body,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task UpdateUserPasswordAsync(UserUpdatePasswordDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/User/Update/Password");
@@ -1079,8 +964,7 @@ namespace Midas.Services
                 {
                     var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
                     var content_ = new System.Net.Http.StringContent(json_);
-                    content_.Headers.ContentType =
-                        System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("PATCH");
 
@@ -1091,14 +975,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -1114,12 +995,8 @@ namespace Midas.Services
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1152,16 +1029,14 @@ namespace Midas.Services
         /// </summary>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<UserDto> GetUserByEmailAsync(string email,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<UserDto> GetUserByEmailAsync(string email, System.Threading.CancellationToken cancellationToken)
         {
             if (email == null)
                 throw new System.ArgumentNullException("email");
 
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/User/Email/{email}");
-            urlBuilder_.Replace("{email}",
-                System.Uri.EscapeDataString(ConvertToString(email, System.Globalization.CultureInfo.InvariantCulture)));
+            urlBuilder_.Replace("{email}", System.Uri.EscapeDataString(ConvertToString(email, System.Globalization.CultureInfo.InvariantCulture)));
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1170,8 +1045,7 @@ namespace Midas.Services
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
                 {
                     request_.Method = new System.Net.Http.HttpMethod("GET");
-                    request_.Headers.Accept.Add(
-                        System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -1180,14 +1054,11 @@ namespace Midas.Services
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
                         if (response_.Content != null && response_.Content.Headers != null)
                         {
                             foreach (var item_ in response_.Content.Headers)
@@ -1199,25 +1070,17 @@ namespace Midas.Services
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<UserDto>(response_, headers_, cancellationToken)
-                                    .ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<UserDto>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
                             return objectResponse_.Object;
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1249,10 +1112,7 @@ namespace Midas.Services
 
         public bool ReadResponseAsString { get; set; }
 
-        protected virtual async System.Threading.Tasks.Task<ObjectResponseResult<T>> ReadObjectResponseAsync<T>(
-            System.Net.Http.HttpResponseMessage response,
-            System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>>
-                headers, System.Threading.CancellationToken cancellationToken)
+        protected virtual async System.Threading.Tasks.Task<ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken)
         {
             if (response == null || response.Content == null)
             {
@@ -1264,8 +1124,7 @@ namespace Midas.Services
                 var responseText = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    var typedBody =
-                        Newtonsoft.Json.JsonConvert.DeserializeObject<T>(responseText, JsonSerializerSettings);
+                    var typedBody = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(responseText, JsonSerializerSettings);
                     return new ObjectResponseResult<T>(typedBody, responseText);
                 }
                 catch (Newtonsoft.Json.JsonException exception)
@@ -1307,12 +1166,10 @@ namespace Midas.Services
                 var name = System.Enum.GetName(value.GetType(), value);
                 if (name != null)
                 {
-                    var field = System.Reflection.IntrospectionExtensions.GetTypeInfo(value.GetType())
-                        .GetDeclaredField(name);
+                    var field = System.Reflection.IntrospectionExtensions.GetTypeInfo(value.GetType()).GetDeclaredField(name);
                     if (field != null)
                     {
-                        var attribute = System.Reflection.CustomAttributeExtensions.GetCustomAttribute(field,
-                                typeof(System.Runtime.Serialization.EnumMemberAttribute))
+                        var attribute = System.Reflection.CustomAttributeExtensions.GetCustomAttribute(field, typeof(System.Runtime.Serialization.EnumMemberAttribute)) 
                             as System.Runtime.Serialization.EnumMemberAttribute;
                         if (attribute != null)
                         {
@@ -1320,22 +1177,21 @@ namespace Midas.Services
                         }
                     }
 
-                    var converted = System.Convert.ToString(System.Convert.ChangeType(value,
-                        System.Enum.GetUnderlyingType(value.GetType()), cultureInfo));
+                    var converted = System.Convert.ToString(System.Convert.ChangeType(value, System.Enum.GetUnderlyingType(value.GetType()), cultureInfo));
                     return converted == null ? string.Empty : converted;
                 }
             }
-            else if (value is bool)
+            else if (value is bool) 
             {
                 return System.Convert.ToString((bool)value, cultureInfo).ToLowerInvariant();
             }
             else if (value is byte[])
             {
-                return System.Convert.ToBase64String((byte[])value);
+                return System.Convert.ToBase64String((byte[]) value);
             }
             else if (value.GetType().IsArray)
             {
-                var array = System.Linq.Enumerable.OfType<object>((System.Array)value);
+                var array = System.Linq.Enumerable.OfType<object>((System.Array) value);
                 return string.Join(",", System.Linq.Enumerable.Select(array, o => ConvertToString(o, cultureInfo)));
             }
 
@@ -1344,257 +1200,215 @@ namespace Midas.Services
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class AddNewFamilyDto
     {
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("founderId", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("founderId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long FounderId { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class AddNewFamilyReturnDto
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class AddUserToFamilyDto
     {
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("familyId", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("familyId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long FamilyId { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class DeleteUserFromFamilyDto
     {
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("familyId", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("familyId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long FamilyId { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class FamilyDto
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class FamilyRoleDto
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class SetUserFamilyRoleDto
     {
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("familyId", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("familyId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long FamilyId { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("familyRoleId", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("familyRoleId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long FamilyRoleId { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class UserDto
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("firstName", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("firstName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FirstName { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("lastName", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("lastName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string LastName { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("registerDate", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("registerDate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset RegisterDate { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("birthDate", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("birthDate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset BirthDate { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("userFamilyRoles", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("userFamilyRoles", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public UserFamilyRoleListDto UserFamilyRoles { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class UserFamilyRoleDto
     {
-        [Newtonsoft.Json.JsonProperty("family", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("family", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public FamilyDto Family { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("familyRole", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("familyRole", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public FamilyRoleDto FamilyRole { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class UserFamilyRoleListDto
     {
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int Count { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<UserFamilyRoleDto> Items { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class UserLoginDto
     {
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("password", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("password", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Password { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class UserRegisterDto
     {
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("password", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("password", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Password { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("firstName", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("firstName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FirstName { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("lastName", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("lastName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string LastName { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("birthDate", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("birthDate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset BirthDate { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class UserRegisterReturnDto
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class UserUpdateDto
     {
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("firstName", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("firstName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FirstName { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("lastName", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("lastName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string LastName { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("birthDate", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("birthDate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset BirthDate { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class UserUpdateEmailDto
     {
-        [Newtonsoft.Json.JsonProperty("oldEmail", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("oldEmail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string OldEmail { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("newEmail", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("newEmail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string NewEmail { get; set; }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class UserUpdatePasswordDto
     {
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("newPassword", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("newPassword", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string NewPassword { get; set; }
+
     }
+
 
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.17.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
@@ -1604,16 +1418,10 @@ namespace Midas.Services
 
         public string Response { get; private set; }
 
-        public System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>>
-            Headers { get; private set; }
+        public System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> Headers { get; private set; }
 
-        public ApiException(string message, int statusCode, string response,
-            System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>>
-                headers, System.Exception innerException)
-            : base(
-                message + "\n\nStatus: " + statusCode + "\nResponse: \n" + ((response == null)
-                    ? "(null)"
-                    : response.Substring(0, response.Length >= 512 ? 512 : response.Length)), innerException)
+        public ApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Exception innerException)
+            : base(message + "\n\nStatus: " + statusCode + "\nResponse: \n" + ((response == null) ? "(null)" : response.Substring(0, response.Length >= 512 ? 512 : response.Length)), innerException)
         {
             StatusCode = statusCode;
             Response = response;
@@ -1631,14 +1439,13 @@ namespace Midas.Services
     {
         public TResult Result { get; private set; }
 
-        public ApiException(string message, int statusCode, string response,
-            System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>>
-                headers, TResult result, System.Exception innerException)
+        public ApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, TResult result, System.Exception innerException)
             : base(message, statusCode, response, headers, innerException)
         {
             Result = result;
         }
     }
+
 }
 
 #pragma warning restore 1591

@@ -1,7 +1,7 @@
 namespace Domain.Entities;
 
-public class Message
+public class FamilyRole
 {
     public ulong Id { get; set; }
-    public string Content { get; set; }
+    public string Name { get; set; }
 }

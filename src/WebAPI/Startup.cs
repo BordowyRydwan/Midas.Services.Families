@@ -51,7 +51,7 @@ public class Startup
     {
         var connString = _builder.Configuration.GetConnectionString("DefaultConnection");
 
-        _builder.Services.AddDbContext<MessageDbContext>(options =>
+        _builder.Services.AddDbContext<FamilyDbContext>(options =>
         {
             options.UseSqlServer(connString).EnableSensitiveDataLogging();
         });
@@ -73,7 +73,7 @@ public class Startup
 
     public Startup AddInternalServices()
     {
-        _builder.Services.AddScoped<IMessageService, MessageService>();
+        _builder.Services.AddScoped<IFamilyService, FamilyService>();
         _logger.Debug("Internal services were successfully added");
 
         return this;
@@ -81,7 +81,7 @@ public class Startup
 
     public Startup AddInternalRepositories()
     {
-        _builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+        _builder.Services.AddScoped<IFamilyRepository, FamilyRepository>();
         _logger.Debug("Internal repositories were successfully added");
 
         return this;
