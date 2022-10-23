@@ -9,5 +9,5 @@ public interface IFamilyService : IInternalService
     public Task<bool> AddUserToFamily(AddUserToFamilyDto dto);
     public Task<bool> DeleteUserFromFamily(DeleteUserFromFamilyDto dto);
     public Task<bool> SetUserFamilyRole(SetUserFamilyRoleDto dto);
-    public Task<UserFamilyRoleListDto> GetFamilyMembersForActiveUser();
+    public Task<UserFamilyRoleListDto> GetFamilyMembershipsForActiveUser();
 }

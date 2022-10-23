@@ -101,12 +101,12 @@ public class FamilyController : ControllerBase
         return NotFound();
     }
     
-    [SwaggerOperation(Summary = "Get a list of active user's family members")]
-    [HttpGet("FamilyMembers", Name = nameof(GetFamilyMembersForUser))]
+    [SwaggerOperation(Summary = "Get a list of active user's family memberships")]
+    [HttpGet("FamilyMembers", Name = nameof(GetFamilyMembershipsForUser))]
     [ProducesResponseType(typeof(UserFamilyRoleListDto), 200)]
-    public async Task<IActionResult> GetFamilyMembersForUser()
+    public async Task<IActionResult> GetFamilyMembershipsForUser()
     {
-        var familyMembers = await _familyService.GetFamilyMembersForActiveUser().ConfigureAwait(false);
+        var familyMembers = await _familyService.GetFamilyMembershipsForActiveUser().ConfigureAwait(false);
         return familyMembers is null ? NotFound() : Ok(familyMembers);
     }
 }

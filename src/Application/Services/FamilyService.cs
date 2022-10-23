@@ -108,7 +108,7 @@ public class FamilyService : IFamilyService
         return await _familyRepository.SetUserFamilyRole(userFamilyRole).ConfigureAwait(false);
     }
 
-    public async Task<UserFamilyRoleListDto> GetFamilyMembersForActiveUser()
+    public async Task<UserFamilyRoleListDto> GetFamilyMembershipsForActiveUser()
     {
         var token = _httpContextAccessor.HttpContext.Request.Headers["Authorization"].ToString();
         var handler = new JwtSecurityTokenHandler();
