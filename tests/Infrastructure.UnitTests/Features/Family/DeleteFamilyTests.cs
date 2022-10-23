@@ -23,7 +23,7 @@ public class DeleteFamilyTests
     
     public DeleteFamilyTests()
     {
-        var mockContext = new Mock<AuthorizationDbContext>();
+        var mockContext = new Mock<FamilyDbContext>();
         var mockData = _data.AsQueryable().BuildMockDbSet();
         
         mockData.Setup(x => x.FindAsync(It.IsAny<ulong>())).ReturnsAsync((object[] ids) =>

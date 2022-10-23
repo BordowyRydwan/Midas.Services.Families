@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Midas.Services;
 using WebAPI.Controllers;
 using Moq;
 
@@ -24,7 +25,7 @@ public class AddNewFamilyTests
     public AddNewFamilyTests()
     {
         var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.Development.json").Build();
-        var connectionString = configuration.GetConnectionString("AuthorizationConnection");
+        var connectionString = configuration.GetConnectionString("DefaultConnection");
 
         var dbOptions = new DbContextOptionsBuilder<AuthorizationDbContext>().UseSqlServer(connectionString).Options;
         var dbContext = new AuthorizationDbContext(dbOptions);
@@ -53,7 +54,6 @@ public class AddNewFamilyTests
             FirstName = "Lorem",
             LastName = "Ipsum",
             BirthDate = new DateTime(2002, 1, 20),
-            Password = "zaq1@WSX"
         };
         
         var result = await _userController.RegisterNewUser(initialInstance).ConfigureAwait(false) as OkObjectResult;

@@ -1,13 +1,11 @@
 using Application.Dto;
 using Application.Interfaces;
 using Domain.Exceptions;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace WebAPI.Controllers;
 
-[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class FamilyController : ControllerBase
@@ -101,5 +99,14 @@ public class FamilyController : ControllerBase
         
         _logger.LogError("Could not add user with email: \"{Email}\" to family id: {Id}", dto.Email, dto.FamilyId);
         return NotFound();
+    }
+    
+    [SwaggerOperation(Summary = "Get a list of active user's family members")]
+    [HttpGet("FamilyMembers", Name = nameof(GetFamilyMembersForUser))]
+    [ProducesResponseType(typeof(UserFamilyRoleListDto), 200)]
+    public async Task<IActionResult> GetFamilyMembersForUser()
+    {
+        var familyMembers = await _familyService.GetFamilyMembersForActiveUser().ConfigureAwait(false);
+        return familyMembers is null ? NotFound() : Ok(familyMembers);
     }
 }

@@ -118,4 +118,11 @@ public class FamilyRepository : IFamilyRepository
         await _dbContext.SaveChangesAsync().ConfigureAwait(false);
         return true;
     }
+
+    public async Task<ICollection<UserFamilyRole>> GetFamilyMemberRolesForUser(ulong userId)
+    {
+        return await _dbContext.UserFamilyRoles.Where(x => x.UserId == userId)
+            .ToListAsync()
+            .ConfigureAwait(false);
+    }
 }

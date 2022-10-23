@@ -1,3 +1,4 @@
+using Domain.Consts;
 using Domain.Entities;
 using Infrastructure.Data;
 using Infrastructure.Interfaces;
@@ -16,15 +17,6 @@ public class SetUserFamilyRoleTests
     {
         new()
         {
-            User = new User
-            {
-                Id = 1,
-                Email = "test@test.pl",
-                FirstName = "Test 1",
-                LastName = "Test 1",
-                BirthDate = DateTime.UtcNow,
-                RegisterDate = DateTime.UtcNow
-            },
             UserId = 1,
             Family = new Family
             {
@@ -43,7 +35,7 @@ public class SetUserFamilyRoleTests
 
     public SetUserFamilyRoleTests()
     {
-        var mockContext = new Mock<AuthorizationDbContext>();
+        var mockContext = new Mock<FamilyDbContext>();
         var mockData = _mockUserFamilyRoles.AsQueryable().BuildMockDbSet();
 
         mockContext.Setup(x => x.UserFamilyRoles).Returns(mockData.Object);
@@ -92,7 +84,7 @@ public class SetUserFamilyRoleTests
         {
             FamilyId = familyId,
             UserId = userId,
-            FamilyRoleId = 3
+            FamilyRoleId = (ulong)FamilyRoles.MainAdministrator
         };
         var result = await _repository.SetUserFamilyRole(testInstance).ConfigureAwait(false);
         

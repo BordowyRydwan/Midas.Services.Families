@@ -1,3 +1,4 @@
+using Domain.Consts;
 using Domain.Entities;
 using Infrastructure.Data;
 using Infrastructure.Interfaces;
@@ -16,15 +17,6 @@ public class AddUserToFamilyTests
     {
         new()
         {
-            User = new User
-            {
-                Id = 1,
-                Email = "test@test.pl",
-                FirstName = "Test 1",
-                LastName = "Test 1",
-                BirthDate = DateTime.UtcNow,
-                RegisterDate = DateTime.UtcNow
-            },
             UserId = 1,
             Family = new Family
             {
@@ -34,8 +26,8 @@ public class AddUserToFamilyTests
             FamilyId = 1,
             FamilyRole = new FamilyRole
             {
-                Id = 1,
-                Name = "Main administrator"
+                Id = (ulong)FamilyRoles.MainAdministrator,
+                Name = Enum.GetName(FamilyRoles.MainAdministrator)
             },
             FamilyRoleId = 1
         }
@@ -43,7 +35,7 @@ public class AddUserToFamilyTests
 
     public AddUserToFamilyTests()
     {
-        var mockContext = new Mock<AuthorizationDbContext>();
+        var mockContext = new Mock<FamilyDbContext>();
         var mockData = _mockUserFamilyRoles.AsQueryable().BuildMockDbSet();
 
         mockContext.Setup(x => x.UserFamilyRoles).Returns(mockData.Object);

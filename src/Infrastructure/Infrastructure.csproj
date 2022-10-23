@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Clients" />
     <Folder Include="Migrations" />
     <Folder Include="Migrations\" />
   </ItemGroup>
@@ -38,10 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <OpenApiReference Include="OpenAPIs\auth.json" CodeGenerator="NSwagCSharp" Namespace="Midas.Services">
-      <SourceUri>https://localhost:7034/swagger/v1/swagger.json</SourceUri>
-      <ClassName>AuthorizationClient</ClassName>
-      <OutputPath>..\Clients\AuthorizationClient.cs</OutputPath>
+    <OpenApiReference Include="OpenAPIs\user.json" CodeGenerator="NSwagCSharp" Namespace="Midas.Services">
+      <ClassName>UserClient</ClassName>
+      <OutputPath>..\Clients\UserClient.cs</OutputPath>
       <Options>/GenerateClientInterfaces:true /UseBaseUrl:false</Options>
     </OpenApiReference>
   </ItemGroup>

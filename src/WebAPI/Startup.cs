@@ -30,7 +30,11 @@ public class Startup
     {
         _builder.Services.AddControllers();
         _builder.Services.AddEndpointsApiExplorer();
-        _builder.Services.AddSwaggerGen();
+        _builder.Services.AddSwaggerGen(x =>
+        {
+            x.EnableAnnotations();
+            x.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Families API", Version = "0.1" });
+        });
 
         return this;
     }
@@ -73,6 +77,7 @@ public class Startup
 
     public Startup AddInternalServices()
     {
+        _builder.Services.AddHttpContextAccessor();
         _builder.Services.AddScoped<IFamilyService, FamilyService>();
         _logger.Debug("Internal services were successfully added");
 
@@ -100,19 +105,18 @@ public class Startup
 
     public Startup SetExternalServiceClients()
     {
-        var authServiceAddress = _builder.Configuration["ServiceAddresses:Authorization"];
+        var authServiceAddress = _builder.Configuration["ServiceAddresses:User"];
         var httpClientDelegate = (Action<HttpClient>)(client => client.BaseAddress = new Uri(authServiceAddress));
         var httpClientHandler = new HttpClientHandler
         {
             ClientCertificateOptions = ClientCertificateOption.Manual,
-            ServerCertificateCustomValidationCallback = (httpRequestMessage, cert, cetChain, policyErrors) => true
-        };
+            ServerCertificateCustomValidationCallback = (httpRequestMessage, cert, certChain, policyErrors) => true
+        };    
 
-        _builder.Services.AddHeaderPropagation(o => o.Headers.Add("Authorization"));
-        _builder.Services.AddHttpClient<IAuthorizationClient, AuthorizationClient>(httpClientDelegate)
+        _builder.Services.AddHttpClient<IUserClient, UserClient>(httpClientDelegate)
             .ConfigurePrimaryHttpMessageHandler(() => httpClientHandler)
             .AddHeaderPropagation();
-
+        
         return this;
     }
 
