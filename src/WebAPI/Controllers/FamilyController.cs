@@ -82,8 +82,8 @@ public class FamilyController : ControllerBase
             return Ok();
         }
         
-        _logger.LogError("Could not add user with email: \"{Email}\" to family id: {Id}", dto.Email, dto.FamilyId);
-        return NotFound();
+        _logger.LogError("Could not delete user with email: \"{Email}\" from family id: {Id}", dto.Email, dto.FamilyId);
+        return BadRequest();
     }
 
     [SwaggerOperation(Summary = "Set a user role to specified family")]
@@ -107,6 +107,15 @@ public class FamilyController : ControllerBase
     public async Task<IActionResult> GetFamilyMembershipsForUser()
     {
         var familyMembers = await _familyService.GetFamilyMembershipsForActiveUser().ConfigureAwait(false);
+        return familyMembers is null ? NotFound() : Ok(familyMembers);
+    }
+    
+    [SwaggerOperation(Summary = "Get a list of family members by family ID")]
+    [HttpGet("FamilyMembers/{familyId}", Name = nameof(GetFamilyMembers))]
+    [ProducesResponseType(typeof(UserFamilyRoleListDto), 200)]
+    public async Task<IActionResult> GetFamilyMembers(ulong familyId)
+    {
+        var familyMembers = await _familyService.GetFamilyMembers(familyId).ConfigureAwait(false);
         return familyMembers is null ? NotFound() : Ok(familyMembers);
     }
 }

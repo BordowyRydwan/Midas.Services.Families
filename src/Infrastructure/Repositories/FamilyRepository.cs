@@ -122,6 +122,17 @@ public class FamilyRepository : IFamilyRepository
     public async Task<ICollection<UserFamilyRole>> GetFamilyMemberRolesForUser(ulong userId)
     {
         return await _dbContext.UserFamilyRoles.Where(x => x.UserId == userId)
+            .Include(x => x.FamilyRole)
+            .Include(x => x.Family)
+            .ToListAsync()
+            .ConfigureAwait(false);
+    }
+    
+    public async Task<ICollection<UserFamilyRole>> GetFamilyMembers(ulong familyId)
+    {
+        return await _dbContext.UserFamilyRoles.Where(x => x.FamilyId == familyId)
+            .Include(x => x.FamilyRole)
+            .Include(x => x.Family)
             .ToListAsync()
             .ConfigureAwait(false);
     }

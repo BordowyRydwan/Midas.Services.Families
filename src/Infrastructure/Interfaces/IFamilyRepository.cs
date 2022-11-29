@@ -11,4 +11,5 @@ public interface IFamilyRepository
     public Task<bool> DeleteUserFromFamily(ulong userId, ulong familyId);
     public Task<bool> SetUserFamilyRole(UserFamilyRole userFamilyRole);
     public Task<ICollection<UserFamilyRole>> GetFamilyMemberRolesForUser(ulong userId);
+    public Task<ICollection<UserFamilyRole>> GetFamilyMembers(ulong familyId);
 }

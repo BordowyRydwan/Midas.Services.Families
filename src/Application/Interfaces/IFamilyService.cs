@@ -10,4 +10,5 @@ public interface IFamilyService : IInternalService
     public Task<bool> DeleteUserFromFamily(DeleteUserFromFamilyDto dto);
     public Task<bool> SetUserFamilyRole(SetUserFamilyRoleDto dto);
     public Task<UserFamilyRoleListDto> GetFamilyMembershipsForActiveUser();
+    public Task<UserFamilyRoleListDto> GetFamilyMembers(ulong familyId);
 }

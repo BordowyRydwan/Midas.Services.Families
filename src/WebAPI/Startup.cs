@@ -113,6 +113,7 @@ public class Startup
             ServerCertificateCustomValidationCallback = (httpRequestMessage, cert, certChain, policyErrors) => true
         };    
 
+        _builder.Services.AddHeaderPropagation(o => o.Headers.Add("Authorization"));
         _builder.Services.AddHttpClient<IUserClient, UserClient>(httpClientDelegate)
             .ConfigurePrimaryHttpMessageHandler(() => httpClientHandler)
             .AddHeaderPropagation();
@@ -123,18 +124,14 @@ public class Startup
     public void Run()
     {
         var app = _builder.Build();
-
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
-
+        
+        app.UseCors("Open");
+        app.UseSwagger();
+        app.UseSwaggerUI();
         app.UseHeaderPropagation();
         app.MigrateDatabase();
         app.UseHttpsRedirection();
         app.UseMiddleware<AuthorizationMiddleware>();
-        app.UseCors("Open");
         app.UseAuthentication();
         app.MapControllers();
         app.Run();

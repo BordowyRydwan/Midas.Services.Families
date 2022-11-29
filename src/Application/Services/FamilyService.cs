@@ -114,29 +114,46 @@ public class FamilyService : IFamilyService
         var handler = new JwtSecurityTokenHandler();
 
         var userId = handler.ReadJwtToken(token).Claims.Single(x => x.Type == ClaimTypes.NameIdentifier).Value;
-        var userFamilyRoles = await _familyRepository.GetFamilyMemberRolesForUser(Convert.ToUInt64(userId)).ConfigureAwait(false);
-        var userFamilyTasks = userFamilyRoles.Select(MapUserFamilyRoleToDto);
-        var userFamilyRoleDtos = await Task.WhenAll(userFamilyTasks);
+        var userFamilyRoles = await _familyRepository.GetFamilyMemberRolesForUser(Convert.ToUInt64(userId))
+            .ConfigureAwait(false);
+        var returnList = new List<UserFamilyRoleDto>();
 
-        return _mapper.Map<List<UserFamilyRoleDto>, UserFamilyRoleListDto>(userFamilyRoleDtos.ToList());
+        foreach (var item in userFamilyRoles)
+        {
+            var dto = await MapUserFamilyRoleToDto(item).ConfigureAwait(false);
+            returnList.Add(dto);
+        }
+        
+        return _mapper.Map<List<UserFamilyRoleDto>, UserFamilyRoleListDto>(returnList.ToList());
+    }
+    
+    public async Task<UserFamilyRoleListDto> GetFamilyMembers(ulong familyId)
+    {
+        var entity = await _familyRepository.GetFamilyMembers(familyId).ConfigureAwait(false);
+        var returnList = new List<UserFamilyRoleDto>();
+
+        foreach (var item in entity)
+        {
+            var dto = await MapUserFamilyRoleToDto(item).ConfigureAwait(false);
+            returnList.Add(dto);
+        }
+        
+        return _mapper.Map<List<UserFamilyRoleDto>, UserFamilyRoleListDto>(returnList.ToList());
     }
 
     private async Task<UserFamilyRoleDto> MapUserFamilyRoleToDto(UserFamilyRole userFamilyRole)
     {
-        var userEntity = await _userClient.GetUserByIdAsync((long)userFamilyRole.UserId);
-
-        if (userEntity is null) return null;
-
         var familyRoleDto = _mapper.Map<FamilyRole, FamilyRoleDto>(userFamilyRole.FamilyRole);
         var familyDto = _mapper.Map<Family, FamilyDto>(userFamilyRole.Family);
+        var userDto = await _userClient.GetUserByIdAsync(Convert.ToInt64(userFamilyRole.UserId)).ConfigureAwait(false);
 
         var userFamilyRoleDto = new UserFamilyRoleDto
         {
-            User = userEntity,
+            User = userDto,
             FamilyRole = familyRoleDto,
             Family = familyDto
         };
-            
+        
         return userFamilyRoleDto;
     }
 
