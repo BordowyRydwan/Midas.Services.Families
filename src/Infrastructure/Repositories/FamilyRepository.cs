@@ -67,8 +67,7 @@ public class FamilyRepository : IFamilyRepository
 
     public async Task<bool> AddUserToFamily(ulong userId, ulong familyId)
     {
-        var keyObject = new { userId, familyId };
-        var userFamilyRoleCheck = await _dbContext.UserFamilyRoles.FindAsync(keyObject).ConfigureAwait(false);
+        var userFamilyRoleCheck = await _dbContext.UserFamilyRoles.FindAsync(userId, familyId).ConfigureAwait(false);
 
         if (userFamilyRoleCheck is not null)
         {
@@ -89,8 +88,7 @@ public class FamilyRepository : IFamilyRepository
 
     public async Task<bool> DeleteUserFromFamily(ulong userId, ulong familyId)
     {
-        var keyObject = new { userId, familyId };
-        var userFamilyRole = await _dbContext.UserFamilyRoles.FindAsync(keyObject).ConfigureAwait(false);
+        var userFamilyRole = await _dbContext.UserFamilyRoles.FindAsync(userId, familyId).ConfigureAwait(false);
 
         if (userFamilyRole is null)
         {
@@ -104,8 +102,7 @@ public class FamilyRepository : IFamilyRepository
 
     public async Task<bool> SetUserFamilyRole(UserFamilyRole userFamilyRole)
     {
-        var keyObject = new { userFamilyRole.UserId, userFamilyRole.FamilyId };
-        var dbEntity = await _dbContext.UserFamilyRoles.FindAsync(keyObject).ConfigureAwait(false);
+        var dbEntity = await _dbContext.UserFamilyRoles.FindAsync(userFamilyRole.UserId, userFamilyRole.FamilyId).ConfigureAwait(false);
 
         if (dbEntity is null)
         {

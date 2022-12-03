@@ -78,7 +78,7 @@ public class Startup
     public Startup AddInternalServices()
     {
         _builder.Services.AddHttpContextAccessor();
-        _builder.Services.AddScoped<IFamilyService, FamilyService>();
+        _builder.Services.AddTransient<IFamilyService, FamilyService>();
         _logger.Debug("Internal services were successfully added");
 
         return this;
@@ -86,7 +86,7 @@ public class Startup
 
     public Startup AddInternalRepositories()
     {
-        _builder.Services.AddScoped<IFamilyRepository, FamilyRepository>();
+        _builder.Services.AddTransient<IFamilyRepository, FamilyRepository>();
         _logger.Debug("Internal repositories were successfully added");
 
         return this;
