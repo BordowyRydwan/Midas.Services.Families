@@ -14,14 +14,14 @@ public class AuthorizationMiddleware
         _next = next;
     }
 
-    public async Task Invoke(HttpContext context, IUserClient userClient)
+    public async Task InvokeAsync(HttpContext context, IUserClient userClient)
     {
         var isAuthorized = await CheckAuthorization(context, userClient).ConfigureAwait(false);
 
         if (!isAuthorized) return;
 
-        try { await _next(context); }
-        catch (Exception ex) { await HandleExceptionAsync(context, ex); }
+        try { await _next(context).ConfigureAwait(false); }
+        catch (Exception ex) { await HandleExceptionAsync(context, ex).ConfigureAwait(false); }
     }
 
     private async Task<bool> CheckAuthorization(HttpContext context, IUserClient userClient)

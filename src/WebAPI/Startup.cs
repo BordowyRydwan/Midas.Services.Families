@@ -57,7 +57,7 @@ public class Startup
 
         _builder.Services.AddDbContext<FamilyDbContext>(options =>
         {
-            options.UseSqlServer(connString).EnableSensitiveDataLogging();
+            options.UseSqlServer(connString, options => options.EnableRetryOnFailure()).EnableSensitiveDataLogging();
         });
 
         _logger.Debug("SQL connection was successfully added");
