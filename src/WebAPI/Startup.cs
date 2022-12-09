@@ -57,7 +57,7 @@ public class Startup
 
         _builder.Services.AddDbContext<FamilyDbContext>(options =>
         {
-            options.UseSqlServer(connString, options => options.EnableRetryOnFailure()).EnableSensitiveDataLogging();
+            options.UseSqlServer(connString).EnableSensitiveDataLogging();
         });
 
         _logger.Debug("SQL connection was successfully added");
@@ -78,7 +78,7 @@ public class Startup
     public Startup AddInternalServices()
     {
         _builder.Services.AddHttpContextAccessor();
-        _builder.Services.AddTransient<IFamilyService, FamilyService>();
+        _builder.Services.AddScoped<IFamilyService, FamilyService>();
         _logger.Debug("Internal services were successfully added");
 
         return this;
@@ -86,7 +86,7 @@ public class Startup
 
     public Startup AddInternalRepositories()
     {
-        _builder.Services.AddTransient<IFamilyRepository, FamilyRepository>();
+        _builder.Services.AddScoped<IFamilyRepository, FamilyRepository>();
         _logger.Debug("Internal repositories were successfully added");
 
         return this;
@@ -115,7 +115,14 @@ public class Startup
 
         _builder.Services.AddHeaderPropagation(o => o.Headers.Add("Authorization"));
         _builder.Services.AddHttpClient<IUserClient, UserClient>(httpClientDelegate)
-            .ConfigurePrimaryHttpMessageHandler(() => httpClientHandler)
+            .ConfigurePrimaryHttpMessageHandler(() =>
+            {
+                return new HttpClientHandler
+                {
+                    ClientCertificateOptions = ClientCertificateOption.Manual,
+                    ServerCertificateCustomValidationCallback = (httpRequestMessage, cert, certChain, policyErrors) => true
+                };
+            })
             .AddHeaderPropagation();
         
         return this;
@@ -129,7 +136,7 @@ public class Startup
         app.UseSwagger();
         app.UseSwaggerUI();
         app.UseHeaderPropagation();
-        app.MigrateDatabase();
+        //app.MigrateDatabase();
         app.UseHttpsRedirection();
         app.UseMiddleware<AuthorizationMiddleware>();
         app.UseAuthentication();

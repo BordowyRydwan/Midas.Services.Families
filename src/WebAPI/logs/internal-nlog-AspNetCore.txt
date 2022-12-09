@@ -1079,3 +1079,10 @@
 2022-12-03 18:12:08.6415 Info Adding target ConsoleTarget(Name=lifetimeConsole)
 2022-12-03 18:12:08.6543 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=62, FilePath=/home/dawid/Pulpit/praca_inzynierska/Projekt/services/Families/src/WebAPI/bin/Debug/net6.0/NLog.config
 2022-12-03 18:12:09.1156 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=62, FilePath=/home/dawid/Pulpit/praca_inzynierska/Projekt/services/Families/src/WebAPI/bin/Debug/net6.0/NLog.config
+2022-12-08 21:59:22.8996 Info Message Template Auto Format enabled
+2022-12-08 21:59:22.9873 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-08 21:59:23.0686 Info Adding target FileTarget(Name=allfile)
+2022-12-08 21:59:23.0712 Info Adding target FileTarget(Name=ownFile-web)
+2022-12-08 21:59:23.0712 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-12-08 21:59:23.1083 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=62, FilePath=/home/dawid/Pulpit/praca_inzynierska/Projekt/services/Families/src/WebAPI/bin/Debug/net6.0/NLog.config
+2022-12-08 21:59:24.1074 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=62, FilePath=/home/dawid/Pulpit/praca_inzynierska/Projekt/services/Families/src/WebAPI/bin/Debug/net6.0/NLog.config
