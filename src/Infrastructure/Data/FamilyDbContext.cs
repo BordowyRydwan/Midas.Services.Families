@@ -15,6 +15,7 @@ public class FamilyDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.HasDefaultSchema("family");
         modelBuilder.Entity<UserFamilyRole>().HasKey(x => new { x.UserId, x.FamilyId });
         modelBuilder.Seed();
     }
